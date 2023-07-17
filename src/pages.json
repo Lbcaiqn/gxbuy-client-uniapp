@@ -1,0 +1,91 @@
+{
+  "pages": [
+    {
+      "path": "pages/Home/Home",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/Classification/Classification",
+      "style": {
+        "navigationBarTitleText": "分类"
+      }
+    },
+    {
+      "path": "pages/Shopcart/Shopcart",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/Profile/Profile",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    }
+  ],
+  "subpackages": [
+    {
+      "root": "sub-pages-goods",
+      "pages": [
+        {
+          "path": "GoodsDetail/GoodsDetail",
+          "style": {}
+        },
+        {
+          "path": "GoodsComment/GoodsComment",
+          "style": {}
+        },
+        {
+          "path": "Search/Search",
+          "style": {}
+        },
+        {
+          "path": "SearchResult/SearchResult",
+          "style": {}
+        }
+      ]
+    }
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/Home/Home",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-fill.png"
+      },
+      {
+        "pagePath": "pages/Classification/Classification",
+        "text": "分类",
+        "iconPath": "static/tabbar/classification.png",
+        "selectedIconPath": "static/tabbar/classification-fill.png"
+      },
+      {
+        "pagePath": "pages/Shopcart/Shopcart",
+        "text": "购物车",
+        "iconPath": "static/tabbar/shopcart.png",
+        "selectedIconPath": "static/tabbar/shopcart-fill.png"
+      },
+      {
+        "pagePath": "pages/Profile/Profile",
+        "text": "我的",
+        "iconPath": "static/tabbar/profile.png",
+        "selectedIconPath": "static/tabbar/profile-fill.png"
+      }
+    ],
+    "position": "bottom",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "color": "#fff",
+    "selectedColor": "#f00"
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "rpxCalcMaxDeviceWidth": 10240
+  }
+}
