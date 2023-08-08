@@ -2,11 +2,17 @@
 withDefaults(defineProps<{ goodsListData: any[] }>(), {
   goodsListData: () => []
 });
+
+function toGoodsDetail(spuId: string) {
+  uni.navigateTo({
+    url: `/sub-pages-goods/GoodsDetail/GoodsDetail?spuId=${spuId}`
+  });
+}
 </script>
 
 <template>
   <view class="goods-list" v-if="goodsListData.length !== 0">
-    <view class="goods-list-item" v-for="i in goodsListData" :key="i._id">
+    <view class="goods-list-item" v-for="i in goodsListData" :key="i._id" @click="toGoodsDetail(i._id)">
       <view class="goods-list-item-img">
         <image :src="i.goods_spu_main_img" mode="widthFix"></image>
       </view>

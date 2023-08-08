@@ -2,8 +2,6 @@
 import { ref } from "vue";
 import { onLoad } from "@dcloudio/uni-app";
 import { getSearchRequest } from "@/api";
-import MySearcher from "@/components/common/MySearcher.vue";
-import GoodsList from "@/components/content/GoodsList.vue";
 
 const goodsListData = ref<any>({});
 const searchQuery = ref<any>({});
@@ -19,6 +17,7 @@ async function getSearchData(options: {
   try {
     const res = (await getSearchRequest(options)).data;
     if (goodsListData.value.data) {
+      goodsListData.value.total = res.total;
       goodsListData.value.data = [...goodsListData.value.data, ...res.data];
     } else {
       goodsListData.value = res;
@@ -49,7 +48,7 @@ async function pullUpLoad() {
 <template>
   <view id="search-result">
     <MySearcher />
-    <scroll-view scroll-y style="height: 95vh; width: 100%" @scrolltolower="pullUpLoad">
+    <scroll-view scroll-y style="height: calc(95vh - var(--window-bottom)); width: 100%" @scrolltolower="pullUpLoad">
       <GoodsList class="goods-list" :goodsListData="goodsListData?.data || []" />
     </scroll-view>
   </view>

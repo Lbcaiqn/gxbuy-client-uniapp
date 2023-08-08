@@ -1,4 +1,18 @@
 {
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "MySearcher": "@/components/common/MySearcher.vue",
+      "UserAddress": "@/components/common/UserAddress.vue",
+      "PullUpLoading": "@/components/common/PullUpLoading.vue",
+      "GoodsCommentBox": "@/components/common/GoodsCommentBox.vue",
+      "ShopInfo": "@/components/common/ShopInfo.vue",
+      "ShopList": "@/components/common/ShopList.vue",
+      "GoodsCard": "@/components/content/GoodsCard.vue",
+      "GoodsList": "@/components/content/GoodsList.vue"
+    }
+  },
   "pages": [
     {
       "path": "pages/Home/Home",
@@ -43,6 +57,35 @@
         },
         {
           "path": "SearchResult/SearchResult",
+          "style": {}
+        }
+      ]
+    },
+    {
+      "root": "sub-pages-user",
+      "pages": [
+        {
+          "path": "Order/Order",
+          "style": {}
+        },
+        {
+          "path": "UserDetail/UserDetail",
+          "style": {}
+        },
+        {
+          "path": "Setting/Setting",
+          "style": {}
+        },
+        {
+          "path": "Login/Login",
+          "style": {}
+        },
+        {
+          "path": "ConfirmOrder/ConfirmOrder",
+          "style": {}
+        },
+        {
+          "path": "Pay/Pay",
           "style": {}
         }
       ]

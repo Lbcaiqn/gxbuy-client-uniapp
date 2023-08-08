@@ -8,14 +8,14 @@ import type {
 export function getOrderDataRequest(parameter: GetOrderDataRequestParameter) {
   return request({
     url: "/order/jwt/getOrderData",
-    data: parameter
+    params: parameter
   });
 }
 
 export function getConfirmOrderDataRequest(parameter: GetConfirmOrderDataRequestParameter) {
   return request({
     url: "/order/jwt/getConfirmOrderData",
-    data: parameter
+    params: parameter
   });
 }
 
@@ -40,7 +40,7 @@ export function createOrderByShopcartRequest(shopcartIds: Array<string>) {
 export function getPayInfoRequest(orderIds: Array<string>) {
   return request({
     url: "/order/jwt/getPayInfo",
-    data: {
+    params: {
       orderIds
     }
   });
@@ -49,7 +49,7 @@ export function getPayInfoRequest(orderIds: Array<string>) {
 export function getPayStateRequest(orderIds: Array<string>) {
   return request({
     url: "/order/getPayState",
-    data: {
+    params: {
       orderIds
     }
   });

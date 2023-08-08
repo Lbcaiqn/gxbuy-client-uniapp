@@ -38,7 +38,7 @@ function toSearchResult(c3id: string) {
 <template>
   <view id="Classification">
     <view class="scroll-area" v-if="categoryList.length !== 0">
-      <scroll-view class="scroll-left" scroll-y style="height: 100vh; width: 25%">
+      <scroll-view class="scroll-left" scroll-y style="height: calc(100vh - var(--window-bottom)); width: 25%">
         <view
           class="scroll-left-item"
           :class="{ active: isActive === iIndex }"
@@ -50,7 +50,12 @@ function toSearchResult(c3id: string) {
         </view>
       </scroll-view>
 
-      <scroll-view class="scroll-right" scroll-y :scroll-top="scrollTop" style="height: 100vh; width: 75%">
+      <scroll-view
+        class="scroll-right"
+        scroll-y
+        :scroll-top="scrollTop"
+        style="height: calc(100vh - var(--window-bottom)); width: 75%"
+      >
         <view class="second-cat" v-for="i in categoryList[isActive]?.children" :key="i._id">
           <view class="title">{{ i.cat_name }}</view>
           <view class="third-cat">
@@ -68,7 +73,6 @@ function toSearchResult(c3id: string) {
 <style scoped lang="scss">
 .scroll-area {
   display: flex;
-
   .scroll-left {
     .scroll-left-item {
       height: 80rpx;

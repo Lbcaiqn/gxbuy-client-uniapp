@@ -8,14 +8,17 @@ import type {
 export function getSearchRequest(parameter: GetSearchRequestParameter) {
   return request({
     url: "/goods/search",
-    data: parameter
+    params: parameter
   });
 }
 
-export function getGoodsByShopRequest(id: string, parameter: GetGoodsByShopRequestParameter) {
+export function getGoodsByShopRequest(parameter: GetGoodsByShopRequestParameter) {
   return request({
-    url: "/goods/getGoodsByShop/" + id,
-    data: parameter
+    url: "/goods/getGoodsByShop/" + parameter.shopId,
+    params: {
+      pageSize: parameter.pageSize,
+      page: parameter.page
+    }
   });
 }
 
@@ -25,9 +28,12 @@ export function getGoodsDetailDataRequest(id: string) {
   });
 }
 
-export function getGoodsCommentRequest(id: string, parameter: GetGoodsCommentRequestParameter) {
+export function getGoodsCommentRequest(parameter: GetGoodsCommentRequestParameter) {
   return request({
-    url: "/goods/getGoodsComment/" + id,
-    data: parameter
+    url: "/goods/getGoodsComment/" + parameter.goodsSpuId,
+    params: {
+      pageSize: parameter.pageSize,
+      page: parameter.page
+    }
   });
 }

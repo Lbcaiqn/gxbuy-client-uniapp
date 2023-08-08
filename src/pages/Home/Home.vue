@@ -2,9 +2,6 @@
 import { ref, reactive, nextTick } from "vue";
 import { onLoad } from "@dcloudio/uni-app";
 import { getBannerDataRequest, getRecommendDataRequest, getGoodsByFeatureRequest } from "@/api";
-import MySearcher from "@/components/common/MySearcher.vue";
-import GoodsCard from "@/components/content/GoodsCard.vue";
-import PullUpLoading from "@/components/common/PullUpLoading.vue";
 import type { GetGoodsByFeatureRequestParameter } from "@/types";
 
 // 数据 ---------------------------------------------------------------------------
@@ -81,9 +78,14 @@ async function pullUpLoad() {
 <template>
   <view id="home">
     <MySearcher />
-    <scroll-view scroll-y style="height: 95vh; width: 100%" :scroll-top="scrollTop" @scrolltolower="pullUpLoad">
+    <scroll-view
+      scroll-y
+      style="height: calc(95vh - var(--window-bottom)); width: 100%"
+      :scroll-top="scrollTop"
+      @scrolltolower="pullUpLoad"
+    >
       <view>
-        <swiper class="swiper" v-if="bannerList.length !== 0" autoplay circular interval="4000">
+        <swiper class="swiper" v-if="bannerList.length !== 0" autoplay circular :interval="4000">
           <swiper-item class="swiper-item" v-for="i in bannerList" :key="i._id">
             <navigator :url="'/packageA/GoodsDetail/GoodsDetail?goods_id=' + i.goods_id" :open-type="i.open_type">
               <image :src="baseURL + i.img" mode="widthFix"></image>
@@ -210,10 +212,10 @@ async function pullUpLoad() {
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 9998;
+    z-index: 1;
     height: 80rpx;
     background-color: #fff;
-    border-bottom: 2px solid $uni-color-primary;
+    border-bottom: 2rpx solid $uni-color-primary;
 
     > view {
       margin: 0 50rpx;

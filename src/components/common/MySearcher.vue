@@ -9,7 +9,7 @@ function toSearcher() {
 <template>
   <view class="my-searcher" @click="toSearcher">
     <view class="my-search-box">
-      <!-- <view><uni-icons type="search" size="12"></uni-icons></view> -->
+      <view><uni-icons type="search" size="22"></uni-icons></view>
       <view>搜索</view>
     </view>
   </view>
@@ -20,14 +20,14 @@ function toSearcher() {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  height: calc(5vh - var(--window-bottom));
   background-color: $uni-color-primary;
   .my-search-box {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 90%;
-    height: 3vh;
+    height: calc(3vh - var(--window-bottom));
     font-size: 30rpx;
     color: #000;
     background-color: #fff;

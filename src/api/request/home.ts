@@ -22,7 +22,7 @@ export function getRecommendDataRequest() {
 export function getGoodsByFeatureRequest(parameter: GetGoodsByFeatureRequestParameter) {
   return request({
     url: "/goods/getGoodsByFeature",
-    data: parameter
+    params: parameter
   });
 }
 

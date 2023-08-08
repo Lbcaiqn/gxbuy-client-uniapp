@@ -27,14 +27,20 @@ withDefaults(
     byTime: false
   }
 );
+
+function toGoodsDetail(spuId: string) {
+  uni.navigateTo({
+    url: `/sub-pages-goods/GoodsDetail/GoodsDetail?spuId=${spuId}`
+  });
+}
 </script>
 
 <template>
-  <view id="goods-card" v-if="goods.length !== 0">
+  <view class="goods-card" v-if="goods.length !== 0">
     <view class="goods" v-for="(t, tIndex) in goods">
       <view class="goods-time" v-if="byTime">{{ t.time }}</view>
       <view class="goods-big-box">
-        <view class="goods-item" v-for="(i, iIndex) in t.goods" :key="iIndex">
+        <view class="goods-item" v-for="(i, iIndex) in t.goods" :key="iIndex" @click="toGoodsDetail(i._id)">
           <view class="goods-item-box">
             <view class="goods-item-img">
               <image :src="i.goods_spu_main_img" mode="widthFix"></image>
@@ -64,7 +70,7 @@ withDefaults(
 </template>
 
 <style lang="scss" scoped>
-#goods-card {
+.goods-card {
   .goods {
     .goods-time {
       height: 80rpx;

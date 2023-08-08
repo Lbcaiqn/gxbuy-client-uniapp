@@ -14,9 +14,13 @@ export interface GetSearchRequestParameter extends PageParameter {
   c3id?: number;
 }
 
-export interface GetGoodsByShopRequestParameter extends PageParameter {}
+export interface GetGoodsByShopRequestParameter extends PageParameter {
+  shopId: string;
+}
 
-export interface GetGoodsCommentRequestParameter extends PageParameter {}
+export interface GetGoodsCommentRequestParameter extends PageParameter {
+  goodsSpuId: string;
+}
 
 export interface GetOrderDataRequestParameter extends PageParameter {
   feature: "all" | "wait_paid" | "wait_shipped" | "wait_receive" | "wait_comment" | string;

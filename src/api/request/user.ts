@@ -34,7 +34,7 @@ export function getUserAddressRequest() {
 export function getUserRecordRequest(parameter: GetUserRecordRequestParameter) {
   return request({
     url: "/user/jwt/getUserRecord",
-    data: parameter
+    params: parameter
   });
 }
 
